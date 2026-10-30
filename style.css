@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
+
+:root {
+    --bleu-nuit: #0F1B4C;
+    --rouge-tartan: #B82B32;
+    --rouge-hover: #941F25;
+    --gris-fond: #F4F6FA;
+    --blanc: #FFFFFF;
+    --texte: #1E293B;
+    --texte-secondaire: #526077;
+    --bordure: #E2E8F0;
+    --ombre: 0 10px 25px rgba(15, 27, 76, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--texte);
+    background-color: var(--gris-fond);
+    line-height: 1.65;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--bleu-nuit);
+    line-height: 1.25;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+}
+
+/* ================= EN-TÊTE ET NAVIGATION ================= */
+.site-header {
+    background-color: var(--blanc);
+    border-bottom: 3px solid var(--rouge-tartan);
+    box-shadow: var(--ombre);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    height: 48px;
+    width: auto;
+}
+
+.brand-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.35rem;
+}
+
+.brand-pace {
+    color: var(--rouge-tartan);
+}
+
+.brand-agency {
+    color: var(--bleu-nuit);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--bleu-nuit);
+    padding: 0.4rem 0.2rem;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--rouge-tartan);
+    border-bottom-color: var(--rouge-tartan);
+}
+
+.nav-links a.btn-nav {
+    background-color: var(--rouge-tartan);
+    color: var(--blanc);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border-bottom: none;
+}
+
+.nav-links a.btn-nav:hover,
+.nav-links a.btn-nav.active {
+    background-color: var(--bleu-nuit);
+    color: var(--blanc);
+}
+
+/* ================= BANNIÈRE PRINCIPALE (HERO) ================= */
+.page-hero {
+    background: linear-gradient(135deg, var(--bleu-nuit) 0%, #1B2E78 65%, var(--rouge-tartan) 100%);
+    color: var(--blanc);
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--rouge-tartan);
+    color: var(--blanc);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.page-hero h1 {
+    color: var(--blanc);
+    font-size: 2.5rem;
+    margin-bottom: 0.85rem;
+}
+
+.page-hero p {
+    font-size: 1.1rem;
+    opacity: 0.92;
+}
+
+/* ================= CONTENEUR ET SECTIONS ================= */
+.main-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+.section-block {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--rouge-tartan);
+    display: inline-block;
+}
+
+/* ================= GRILLES ET CARTES ================= */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.8rem;
+}
+
+.card {
+    background-color: var(--blanc);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--ombre);
+    border-top: 4px solid var(--bleu-nuit);
+}
+
+.card-accent {
+    border-top-color: var(--rouge-tartan);
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.85rem;
+}
+
+.card p {
+    color: var(--texte-secondaire);
+    margin-bottom: 1rem;
+}
+
+.feature-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--ombre);
+    border: 2px solid var(--bleu-nuit);
+}
+
+/* ================= TABLEAUX (PROGRAMME) ================= */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--blanc);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--ombre);
+    margin-top: 1rem;
+}
+
+.schedule-table th {
+    background-color: var(--bleu-nuit);
+    color: var(--blanc);
+    text-align: left;
+    padding: 1rem 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+}
+
+.schedule-table td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--bordure);
+    color: var(--texte);
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: #F8FAFC;
+}
+
+.time-tag {
+    font-weight: 700;
+    color: var(--rouge-tartan);
+    white-space: nowrap;
+}
+
+/* ================= LISTES ================= */
+.styled-list {
+    list-style: none;
+    margin-top: 0.8rem;
+}
+
+.styled-list li {
+    padding: 0.45rem 0;
+    padding-left: 1.4rem;
+    position: relative;
+    color: var(--texte-secondaire);
+}
+
+.styled-list li::before {
+    content: "▸";
+    color: var(--rouge-tartan);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* ================= FORMULAIRE (INSCRIPTIONS) ================= */
+.form-card {
+    background-color: var(--blanc);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--ombre);
+    border-top: 4px solid var(--rouge-tartan);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.3rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.45rem;
+    color: var(--bleu-nuit);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--rouge-tartan);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--rouge-tartan);
+    color: var(--blanc);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    padding: 0.85rem 1.8rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--rouge-hover);
+}
+
+/* ================= PIED DE PAGE ================= */
+.site-footer {
+    background-color: var(--bleu-nuit);
+    color: var(--blanc);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: auto;
+    border-top: 4px solid var(--rouge-tartan);
+    font-size: 0.9rem;
+}
+
+.site-footer p {
+    opacity: 0.85;
+    margin-bottom: 0.4rem;
+}
